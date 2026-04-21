@@ -22,6 +22,9 @@ public class WeatherSummary {
         double max = Double.MIN_VALUE;
         double min = Double.MAX_VALUE;
 
+        double total = 0;
+        int runCount = 0;
+
         while(scan.hasNextDouble()){
             double temp = scan.nextDouble();
 
@@ -32,9 +35,11 @@ public class WeatherSummary {
                 min = temp;
             }
 
-            System.out.println(temp);
+            runCount++;
+            total += temp;
         }
-        System.out.println("Min is: " + min + "\nMax is: "+ max);
+        System.out.println("Max is: " + max + "\nMin is: "+ min);
+        System.out.println("Average: " + total/runCount);
         // Implement this method!
         // Hint: use Scanner. nextDouble() and hasNextDouble() will be helpful here!
     }
