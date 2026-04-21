@@ -19,15 +19,22 @@ public class WeatherSummary {
      */
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        double max = Double.MIN_VALUE;
+        double min = Double.MAX_VALUE;
 
-        while(scan.hasNextLine()){
+        while(scan.hasNextDouble()){
             double temp = scan.nextDouble();
 
-            //Consume \n after balance input
-            if(scan.hasNextLine()) scan.nextLine();
+            if(max < temp){
+                max = temp;
+            }
+            if(min > temp){
+                min = temp;
+            }
 
             System.out.println(temp);
         }
+        System.out.println("Min is: " + min + "\nMax is: "+ max);
         // Implement this method!
         // Hint: use Scanner. nextDouble() and hasNextDouble() will be helpful here!
     }
